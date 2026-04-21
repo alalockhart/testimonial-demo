@@ -6,159 +6,200 @@
 /* MARQUEE AS BACKGROUND */
 /* ----------------------------- */
 .testi-wrapper {
-    position: relative;
-    background-color: #4d0012; /* Burgundy base */
-    padding: 100px 20px;
-    overflow: hidden;
+position: relative;
+background-color: #4d0012; /* Burgundy base */
+padding: 100px 20px;
+overflow: hidden;
 }
 
 .background-marquee {
-    position: absolute;
-    top: 10%;
-    left: 0;
-    width: 100%;
-    white-space: nowrap;
-    font-family: "Cormorant Unicase", serif;
-    font-size: 12rem; /* Massive scale like the example */
-    color: rgba(255, 255, 255, 0.4);
-    pointer-events: none;
-    animation: marqueeBg 30s linear infinite;
+position: absolute;
+top: 10%;
+left: 0;
+width: 100%;
+white-space: nowrap;
+font-family: "Cormorant Unicase", serif;
+font-size: 12rem; /* Massive scale like the example */
+color: rgba(255, 255, 255, 0.4);
+pointer-events: none;
+animation: marqueeBg 30s linear infinite;
 }
 
 @keyframes marqueeBg {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+0% { transform: translateX(0); }
+100% { transform: translateX(-50%); }
 }
 
 /* ----------------------------- */
 /* CENTERED TESTIMONIAL CARD */
 /* ----------------------------- */
 .testi-container {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    z-index: 2;
+position: relative;
+max-width: 900px;
+margin: 0 auto;
+z-index: 2;
 }
 
 .testi-card {
-    background: #f2f3ed;
-    padding: 80px 60px;
-    text-align: center;
-    outline: 1px solid #bba53d;
-    outline-offset: 10px;
-    position: relative;
-    box-shadow: 20px 20px 0px rgba(0,0,0,0.05);
+background: #f2f3ed;
+padding: 80px 60px;
+text-align: center;
+outline: 1px solid #bba53d;
+outline-offset: 10px;
+position: relative;
+box-shadow: 20px 20px 0px rgba(0,0,0,0.05);
 }
 
 /* Quote Typography */
 .testi-quote {
-    font-family: "Mea Culpa", cursive;
-    color: #4d0012;
-    font-size: 4rem;
-    line-height: 1.1;
-    margin-bottom: 30px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
+font-family: "Mea Culpa", cursive;
+color: #4d0012;
+font-size: 4rem;
+line-height: 1.1;
+margin-bottom: 30px;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 40px;
 }
 
 .testi-details {
-    font-family: "Parkinsans", sans-serif;
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto 40px auto;
-    line-height: 1.6;
+font-family: "Parkinsans", sans-serif;
+font-size: 1.1rem;
+max-width: 600px;
+margin: 0 auto 40px auto;
+line-height: 1.6;
 }
 
 .testi-author {
-    font-family: "Parkinsans", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 700;
-    font-size: 0.9rem;
+font-family: "Parkinsans", sans-serif;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+font-weight: 700;
+font-size: 0.9rem;
 }
 
 /* ----------------------------- */
-/* NAVIGATION ARROWS */
+/* NAVIGATIONAL ARROWS */
 /* ----------------------------- */
 .nav-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    background: #f2f3ed;
-    transition: 0.3s;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+width: 50px;
+height: 50px;
+border: 1px solid #ccc;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+background: #f2f3ed;
+transition: 0.3s;
 }
 
 .nav-arrow:hover { border-color: #000; }
 .prev { left: -25px; }
 .next { right: -25px; }
 
+@media (max-width: 600px) {
+.prev { left: 10px; }
+.next { right: 10px; }
+.testi-card { padding: 60px 30px; }
+.testi-quote { font-size: 2.5rem; }
+}
+/* ----------------------------- */
+/* MOBILE RESPONSIVE UPDATES */
+/* ----------------------------- */
+
+@media (max-width: 1024px) {
+/* 1. Add extra padding at the bottom of the card to make room for arrows */
+.testi-card {
+padding: 60px 30px 100px 30px;
+}
+
+/* 2. Move arrows to the bottom */
+.nav-arrow {
+top: auto;
+bottom: 30px; /* Distance from the bottom of the card */
+transform: none;
+}
+
+/* 3. Position them side-by-side in the center */
+.prev {
+left: calc(50% - 60px); /* Moves it 60px left of center */
+}
+
+.next {
+right: calc(50% - 60px); /* Moves it 60px right of center */
+}
+
+/* 4. Optional: Scale down fonts slightly for mobile */
+.testi-quote {
+font-size: 2.8rem;
+}
+
+.background-marquee {
+font-size: 6rem;
+top: 5%;
+}
+}
 </style>
 
 <div class="testi-wrapper">
-    <div class="background-marquee">
-        TESTIMONIALS • TESTIMONIALS • TESTIMONIALS • TESTIMONIALS •
-    </div>
+<div class="background-marquee">
+TESTIMONIALS • TESTIMONIALS • TESTIMONIALS • TESTIMONIALS •
+</div>
 
-    <div class="testi-container">
-        <div class="testi-card">
-            
-            <div class="prev nav-arrow" onclick="changeTesti(-1)">←</div>
-            <div class="next nav-arrow" onclick="changeTesti(1)">→</div>
+<div class="testi-container">
+<div class="testi-card">
 
-            <div class="testi-quote" id="display-sub">"This looks fantastic!"</div>
-            
-            <p class="testi-details" id="display-main">
-                “Brand Armory provides great coaching and templates that are modern and easy to customize. I highly recommend their services for anyone looking to elevate their brand's presence.”
-            </p>
-            
-            <div class="testi-author" id="display-name">- Samantha Johnson</div>
-            
-            
-        </div>
-    </div>
+<div class="prev nav-arrow" onclick="changeTesti(-1)">←</div>
+<div class="next nav-arrow" onclick="changeTesti(1)">→</div>
+
+<div class="testi-quote" id="display-sub">"This looks fantastic!"</div>
+
+<p class="testi-details" id="display-main">
+“Brand Armory provides great coaching and templates that are modern and easy to customize. I highly recommend their services for anyone looking to elevate their brand's presence.”
+</p>
+
+<div class="testi-author" id="display-name">- Samantha Johnson</div>
+
+</div>
+</div>
 </div>
 
 <script>
 // 1. This is where you add more testimonials!
 const testimonials = [
-    {
-        sub: "This looks fantastic!",
-        quote: "Brand Armory provides great coaching and templates that are modern and easy to customize. I highly recommend their services for anyone looking to elevate their brand's presence.",
-        name: "Samantha Johnson"
-    },
-    {
-        sub: "Absolutely stunning",
-        quote: "The attention to detail and the aesthetic of the designs are unmatched. My conversion rates have increased significantly since the redesign.",
-        name: "Michael Chen"
-    },
-    {
-        sub: "Pure Excellence",
-        quote: "I was struggling with my brand identity until I found this. The process was seamless and the results speak for themselves.",
-        name: "Elena Rodriguez"
-    }
+{
+sub: "This looks fantastic!",
+quote: "Brand Armory provides great coaching and templates that are modern and easy to customize. I highly recommend their services for anyone looking to elevate their brand's presence.",
+name: "Samantha Johnson"
+},
+{
+sub: "Absolutely stunning",
+quote: "The attention to detail and the aesthetic of the designs are unmatched. My conversion rates have increased significantly since the redesign.",
+name: "Michael Chen"
+},
+{
+sub: "Pure Excellence",
+quote: "I was struggling with my brand identity until I found this. The process was seamless and the results speak for themselves.",
+name: "Elena Rodriguez"
+}
 ];
 
 let currentIdx = 0;
 
 function changeTesti(step) {
-    // Calculate new index
-    currentIdx = (currentIdx + step + testimonials.length) % testimonials.length;
-    const t = testimonials[currentIdx];
-    
-    // Update the HTML elements
-    document.getElementById('display-sub').innerText = `"${t.sub}"`;
-    document.getElementById('display-main').innerText = `“${t.quote}”`;
-    document.getElementById('display-name').innerText = `- ${t.name}`;
+// Calculate new index
+currentIdx = (currentIdx + step + testimonials.length) % testimonials.length;
+const t = testimonials[currentIdx];
+
+// Update the HTML elements
+document.getElementById('display-sub').innerText = `"${t.sub}"`;
+document.getElementById('display-main').innerText = `“${t.quote}”`;
+document.getElementById('display-name').innerText = `- ${t.name}`;
 }
 </script>
